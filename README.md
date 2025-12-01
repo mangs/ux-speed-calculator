@@ -4,7 +4,7 @@ Everything you need to build a Solid project, powered by [`solid-start`](https:/
 
 ## Developing
 
-Once you've created a project and installed dependencies with `npm install`, start a development server:
+Install dependencies with `npm install`, then start a development server:
 
 ```bash
 npm start
