@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json.schemastore.org/eslintrc.json",
+  "root": true,
+  "plugins": ["eslint-plugin-jsx-a11y", "eslint-plugin-solid"],
+  "extends": [
+    "@babbel/eslint-config/typescript",
+    "plugin:jsx-a11y/recommended",
+    "plugin:solid/typescript",
+    "@babbel/eslint-config/isomorphic"
+  ],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2024
+  },
+  "rules": {
+    "import/no-unresolved": "off",
+    "jsx-a11y/lang": "error",
+    "jsx-a11y/prefer-tag-over-role": "error",
+    "unicorn/prevent-abbreviations": [
+      "error",
+      { "replacements": { "props": { "properties": false } } }
+    ]
+  },
+  "overrides": [
+    {
+      "files": ["./src/entry-client.tsx", "./src/entry-server.tsx"],
+      "rules": {
+        "unicorn/filename-case": ["error", { "cases": { "kebabCase": true } }]
+      }
+    },
+    {
+      "files": ["./src/components/**/*.tsx", "./src/contexts/**/*.tsx"],
+      "rules": {
+        "unicorn/filename-case": ["error", { "cases": { "pascalCase": true } }]
+      }
+    },
+    {
+      "files": ["./src/routes/**/*.tsx", "./src/components/screens/**/*.tsx"],
+      "rules": {
+        "import/no-default-export": "off",
+        "import/prefer-default-export": "error"
+      }
+    }
+  ]
+}
